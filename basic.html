@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ChordPro Editor AceEditor Extension for Ukulele Music by UkeGeeks</title>
+  <style type="text/css" media="screen">
+    body {
+      overflow: hidden;
+    }
+
+    .my-editor {
+      margin: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  </style>
+  <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////ADY2uwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIiIgAAAAAAIRESAAAAAAAhIhIAAAAAACEiEgAAAAAAISISAAAAAAAhIhIAAAAAACEiEgAAAAIiISISIiAAAhERIhERIAACEiIiIiEgAAISIiIiISAAAhERIhERIAACIiEiEiIgAAAAISISAAAAAAAhERIAAAAAACIiIgAAD4HwAA+B8AAPgfAAD4HwAA+B8AAPgfAAD4HwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAA+B8AAPgfAAD4HwAA" rel="icon" type="image/x-icon">
+</head>
+<body>
+<pre id="songEditor" class="my-editor">
+{title: }
+{artist: Senterbooka }
+
+{key:}
+{capo:}
+{}
+{}
+
+{comment: Verse 1}
+
+{comment: Verse 2}
+
+{start_of_chorus}
+{end_of_chorus}
+</pre>
+</main>
+<!-- setup Ace -->
+<script src="src/ace/ace.js"></script>
+<script src="src/ace/ext-language_tools.js"></script>
+<script src="src/ace/ext-inline_autocomplete.js"></script>
+<script src="src/ace/ext-searchbox.js"></script>
+<script>
+(() => {
+  const EDITOR_ID = 'songEditor';
+
+  // Let Ace know where it should inject itself on the page,
+  // it will grab the contents within this elemtn (`<pre/>`)
+  const editor = window.ace.edit(EDITOR_ID);
+
+  // choose a color scheme (see Ace prebuilts for dozens of choices)
+  editor.setTheme('ace/theme/idle_fingers');
+
+  // Now we tell Ace to treat our text as ChordPro
+  editor.session.setMode('ace/mode/chordpro');
+  editor.setOptions({
+    enableBasicAutocompletion: true,
+    enableSnippets: true,
+  });
+})();
+</script>
+</body>
+</html>

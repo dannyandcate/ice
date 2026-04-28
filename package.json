@@ -1,0 +1,32 @@
+{
+  "name": "@ukegeeks/ace-chordpro-extension",
+  "version": "0.0.3-alpha",
+  "description": "ChordPro song editing extension for Ace Editor",
+  "author": "B.Carter <buz@ukegeeks.com>",
+  "license": "GPL-3.0-or-later",
+  "main": "./dist/ace-chordpro.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buzcarter/ace-chordpro-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buzcarter/ace-chordpro-extension/issues"
+  },
+  "homepage": "https://github.com/buzcarter/ace-chordpro-extension#readme",
+  "scripts": {
+    "build": "npm run build:clean && npm run build:header && webpack --mode production",
+    "build:header": "node ./tasks/buildHeaderTask.js",
+    "build:clean": "rimraf dist .tmp",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "keywords": [ "AceEditor", "ChordPro", "music", "lyrics", "songs", "chords", "extension", "markup", "language" ],
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-concat-files-plugin": "^0.5.2"
+  }
+}

@@ -1,0 +1,36 @@
+html {
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: "Bookerly";
+  src: url("Bookerly-Regular.eot");
+  src: url("Bookerly-Regular.eot?#iefix") format("embedded-opentype"),
+    url("Bookerly-Regular.woff2") format("woff2"),
+    url("Bookerly-Regular.woff") format("woff"),
+    url("Bookerly-Regular.ttf") format("truetype"),
+    url("Bookerly-Regular.svg#Bookerly-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "fonts/Bookerly";
+  font-size: 1.6rem;
+  background-color: #222;
+  color: #ffb;
+}
+
+h1,
+.Chord {
+  color: #ff6;
+}
+
+.LyricsWithoutChords {
+  color: fuchsia;
+}
+
+.Section {
+  margin-bottom: 80px;
+}
